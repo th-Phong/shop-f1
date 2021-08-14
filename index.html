@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assests/css/main.css">
     <link rel="stylesheet" href="./assests/css/base.css">
+    <link href="./assests/fonts/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,13 +19,37 @@
             <div class="grid">
                 <nav class="header__navbar">
                     <ul class="header__navbar-list">
-                        <li class="header__navbar-item header__navbar-item--separate">Vào cửa hàng trên ứng dụng F8-SHOP
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">Vào
+                            cửa
+                            hàng trên ứng dụng F8-SHOP
+                            <!-- QR CODE -->
+                            <div class="header__qr">
+                                <img src="./assests/img/qr_code.png" alt="" class="header__qr-img">
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link"><img src="./assests/img/googleplay.png"
+                                            alt="Google Play" class="header__qr-download-img"></a>
+                                    <a href="" class="header__qr-link"><img src="./assests/img/applestore.png"
+                                            alt="App Store" class="header__qr-download-img"></a>
+
+                                </div>
+                            </div>
                         </li>
-                        <li class="header__navbar-item">Kết nối</li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">Kết nối</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+
                     </ul>
                     <ul class="header__navbar-list">
-                        <li class="header__navbar-item"><a href="" class="header__navbar-item-link">Thông báo</a></li>
-                        <li class="header__navbar-item"><a href="" class="header__navbar-item-link">Trợ giúp</a>
+                        <li class="header__navbar-item"><a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-bell"></i>Thông báo</a></li>
+                        <li class="header__navbar-item"><a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon far fa-question-circle"></i>Trợ giúp</a>
                         </li>
                         <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng
                             ký</li>
