@@ -4,6 +4,11 @@
   --black-color: #000;
   --text-color: #333;
   --border-color: #dbdbdb;
+  --navbar-height: 34px;
+  --header-height: 120px;
+  --header-with-search-height: calc(
+    var(--header-height) - var(--navbar-height)
+  );
 }
 * {
   box-sizing: inherit;
@@ -59,6 +64,8 @@ html {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal__body {
+  --growth-from: 0.7;
+  --growth-to: 1;
   margin: auto;
   z-index: 1;
   position: relative;
