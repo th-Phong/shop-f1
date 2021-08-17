@@ -17,13 +17,77 @@
   position: relative;
   min-height: 26px;
 }
+.header__navbar-user {
+  display: flex;
+  justify-items: center;
+  position: relative;
+}
+.header__navbar-user:hover .header__navbar-user-menu {
+  display: block;
+}
+.header__navbar-user-img {
+  width: 22px;
+  border-radius: 50%;
+}
+.header__navbar-user-name {
+  font-weight: 400;
+  margin-left: 4px;
+  font-size: 1.4rem;
+}
+.header__navbar-user-menu {
+  position: absolute;
+  z-index: 1;
+  padding-left: 0px;
+  top: calc(100% + 4px);
+  right: 0;
+  width: 160px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  list-style: none;
+  box-shadow: 0 1px 3px #666;
+  display: none;
+  line-height: 1.6;
+}
+.header__navbar-user-menu::before {
+  content: "";
+  border-width: 16px 26px;
+  border-style: solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  right: 4px;
+  top: -30px;
+}
+.header__navbar-user-menu-item {
+}
+.header__navbar-user-menu-item--separate {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+.header__navbar-user-menu-item a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.4rem;
+  padding: 4px 16px;
+  display: block;
+}
+.header__navbar-user-menu-item a:hover {
+  background-color: #fafafa;
+}
+.header__navbar-user-menu-item a:first-child {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.header__navbar-user-menu-item a:last-child {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
 .header__navbar-item--has-qr:hover .header__qr {
   display: block;
 }
 .header__navbar-item,
 .header__navbar-item-link {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--white-color);
   text-decoration: none;
   font-weight: 300;
@@ -57,9 +121,12 @@
   color: var(--white-color);
   text-decoration: none;
 }
+.header__navbar-icon-link:nth-child(2) {
+  margin-left: 4px;
+}
 .header__navbar-icon {
   font-size: 1.8rem;
-  margin: 0px 8px;
+  margin: 0px 4px;
 }
 
 .header__navbar-title--no-pointer {
@@ -112,12 +179,14 @@
   width: 404px;
   background-color: #fff;
   right: 0;
-  border: 1px solid #d3d3d3;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: default;
-  transform-origin: top right;
+  transform-origin: calc(100% - 32px) top;
   animation: headerNotify ease-in 0.2s;
   will-change: opacity, transform;
   display: none;
+  z-index: 1;
+  border-radius: 2px;
 }
 @keyframes headerNotify {
   from {
@@ -345,6 +414,10 @@
   width: 150px;
   color: var(--white-color);
 }
+.header__logo-link {
+  color: transparent;
+  text-decoration: none;
+}
 .header__search {
   background-color: var(--white-color);
   height: 40px;
@@ -353,14 +426,155 @@
   display: flex;
   align-items: center;
 }
+/* Cart */
 .header__cart {
   width: 84px;
   text-align: center;
 }
+.header__cart-wrap {
+  position: relative;
+  left: 10px;
+  padding: 8px;
+  cursor: pointer;
+}
+.header__cart:hover .header__cart-list {
+  display: block;
+}
+
 .header__cart-icon {
   margin-top: 4px;
   font-size: 2.4rem;
   color: var(--white-color);
+}
+.header__cart-notice {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  padding: 1px 7px;
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  border-radius: 10px;
+  border: 2px solid #ee4d4d;
+}
+.header__cart-list {
+  position: absolute;
+  top: 100%;
+  right: 14px;
+  background-color: #f6f6f6;
+  width: 400px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3rem 0 rgba(0, 0, 0, 0.2);
+  display: none;
+  animation: fadeIn ease-in 0.2s;
+  cursor: default;
+}
+.header__cart-list::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: -30px;
+  border-width: 20px 26px;
+  border-style: solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  cursor: pointer;
+}
+.header__cart-list--no-cart {
+  padding: 28px 0;
+}
+.header__cart-list--no-cart .header__cart-no-cart-img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.header__cart-no-cart-img {
+  width: 60%;
+  display: none;
+}
+.header__cart-heading {
+  text-align: left;
+  margin: 8px 0px 8px 12px;
+  font-size: 1.4rem;
+  color: #999;
+  font-weight: 400;
+}
+.header__cart-list-item {
+  padding-left: 0;
+  list-style: none;
+}
+.header__cart-item {
+  display: flex;
+  align-items: center;
+}
+.header__cart-item:hover {
+  background-color: #f8ede6;
+}
+.header__cart-img {
+  width: 42px;
+  height: 42px;
+  margin: 12px;
+  border: 1px solid var(--border-color);
+}
+.header__cart-item-info {
+  width: 100%;
+  margin-right: 12px;
+}
+.header__cart-item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__cart-item-name {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin: 0px;
+  width: 195px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.header__cart-item-wrap-price {
+}
+.header__cart-item-price {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+.header__cart-item-multiply {
+  color: #757575;
+  font-size: 1rem;
+  margin: 0 4px;
+}
+.header__cart-item-quantity {
+  color: #757575;
+  font-size: 1.2rem;
+}
+.header__cart-item-body {
+  display: flex;
+  justify-content: space-between;
+}
+.header__cart-item-description {
+  color: #757575;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.header__cart-item-remove {
+  color: var(--text-color);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.header__cart-item-remove:hover {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.header__cart-view-cart {
+  float: right;
+  margin: 0 12px 12px 0;
+}
+.header__cart-view-cart:hover {
+  background-color: #f05d41;
 }
 .header__search-input-wrap {
   height: 100%;
@@ -377,6 +591,7 @@
   box-shadow: 0 1px 3px #666;
   display: none;
   overflow: hidden;
+  padding-left: 4px;
 }
 .header__search-history-heading {
   margin: 8px 12px;
@@ -406,6 +621,7 @@
   text-decoration: none;
   color: var(--text-color);
   line-height: 38px;
+  display: block;
 }
 .header__search-input {
   width: 100%;
